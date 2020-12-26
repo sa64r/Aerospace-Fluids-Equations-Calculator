@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluids Calculator</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Fluids Calculator</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#liftAndDrag">Lift & Drag</a>
+                    <a class="nav-link" href="#speedOfSound">Speed of Sound</a>
+                    <a class="nav-link" href="#reynoldsNumber">Reynolds Number</a>
+                    <!-- <a class="nav-link" href="#">Isentropic Shock Calculations</a> -->
+                </div>
+            </div>
+        </nav>
+        <section id="banner">
+            <h1>Fluids Calculator</h1>
+            <p>Only use for education, not for industries.</p>
+        </section>
+    </header>
+
+    <main>
+        <!-- Section to calculate lift and drag of an aerofoil -->
+        <section id="liftAndDrag">
+            <h2>Lift & Drag</h2>
+            <div class="inputsAndOutputs">
+                <!-- div to contain the input form and the output div -->
+                <form id="liftAndDragForm">
+                    <h3>Inputs</h3>
+                    <div class="inputs">
+                        <div class="inputAndLabel">
+                            <label>Fluid Density kg m<sup>-3</sup>:</label>
+                            <input type="number" name="density" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Free Stream Velocity m s<sup>-1</sup>:</label>
+                            <input type="number" name="velocity" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Wing Planform Area m<sup>2</sup>:</label>
+                            <input type="number" name="area" id="" step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Coefficient of Lift:</label>
+                            <input type="number" name="coefficientOfLift" id="" step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Coefficient of Drag:</label>
+                            <input type="number" name="coefficientOfDrag" id="" step="any">
+                        </div>
+                    </div>
+                    <div class="calculateButtons">
+                        <button type="submit" id="calculateLiftAndDragButton">Calculate Lift &
+                            Drag Force</button>
+                    </div>
+                </form>
+                <div id="liftAndDragOutput" class="output">
+                    <h3>Solutions</h3>
+                    <div id="liftAndDragOutputConsole" class="outputConsole">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section to calculate Speed of Sound and Mach Number -->
+        <section id="speedOfSound">
+            <h2>Speed of Sound (Ideal Gas) for Air</h2>
+            <div class="inputsAndOutputs">
+                <form id="speedOfSoundForm">
+                    <h3>Inputs</h3>
+                    <div class="inputs">
+                        <div class="inputAndLabel">
+                            <label>Ambient Temperature K:</label>
+                            <input type="number" name="temperature" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Adiabatic Index (&gamma;):</label>
+                            <input type="number" name="adiabaticIndex" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Airspeed m s<sup>-1</sup>:</label>
+                            <input type="number" name="airspeed" id="" required step="any">
+                        </div>
+                    </div>
+                    <div class="calculateButtons">
+                        <button type="submit" id="calculateSpeedofSoundButton">Calculate Speed of Sound and Mach
+                            Number</button>
+                    </div>
+                    <p>Assumptions: Molar Gas Constant / Molar Mass of Air = 287</p>
+                </form>
+                <div id="speedOfSoundOutput" class="output">
+                    <h3>Solutions</h3>
+                    <div id="speedOfSoundOutputConsole" class="outputConsole">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reynoldsNumber">
+            <h2>Reynolds Number</h2>
+            <div class="inputsAndOutputs">
+                <form id="reynoldsNumberForm">
+                    <h3>Inputs</h3>
+                    <div class="inputs">
+                        <div class="inputAndLabel">
+                            <label>Fluid Density kg m<sup>-3</sup>:</label>
+                            <input type="number" name="density" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Velocity m s<sup>-1</sup>:</label>
+                            <input type="number" name="velocity" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Charecterstic Length m:</label>
+                            <input type="number" name="charecteristicLength" id="" required step="any">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label>Dynamic Viscosity kg m<sup>-1</sup> s<sup>-1</sup></label>
+                            <input type="number" name="dynamicViscosity" id="" required step="any">
+                        </div>
+                        <b>Select a Flow Scenario to Determine Flow Regime:</b>
+                        <div class="inputAndLabel">
+                            <label for="pipeRadio">Flow in a pipe/duct:</label>
+                            <input type="radio" name="flowScenario" id="pipeRadio" step="any" value="pipe">
+                        </div>
+                        <div class="inputAndLabel">
+                            <label for="plateRadio">Flow over flat plate:</label>
+                            <input type="radio" name="flowScenario" id="plateRadio" step="any" value="plate">
+                        </div>
+                    </div>
+
+                    <div class="calculateButtons">
+                        <button type="submit" id="reynoldsNumberButton">Calculate Reynolds Number</button>
+                    </div>
+                </form>
+                <div id="reynoldsNumberOutput" class="output">
+                    <h3>Solutions</h3>
+                    <div id="reynoldsNumberConsole" class="outputConsole">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+<!-- 
+    - Lift & Drag :)
+    - Mach Number, Speed of Sound :)
+    - Reynolds Number Calculation :)
+    - Air Density Calculation
+    - Isentropic Shock Properties
+    - Gas Turbine Off Design
+
+ -->

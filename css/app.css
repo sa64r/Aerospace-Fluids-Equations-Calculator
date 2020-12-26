@@ -1,0 +1,90 @@
+html {
+    scroll-behavior: smooth; /*Ensures scrolling to section on a tag click*/
+}
+.navbar{
+    padding: 1rem 3rem;
+    width: 100%;
+}
+#banner{
+    background-color: #000;
+    color: #fff;
+    padding: 6rem 3rem;
+}
+
+/*------ CSS for Each Section of Calculations ------*/
+main section {
+    padding: 4rem 3rem;
+    background-color: #ededed;
+}
+main section h2{
+    margin-bottom: 4rem;
+}
+.inputsAndOutputs{
+    display: block;
+}
+form{
+    padding: 3rem;
+    border-radius: 1rem;
+    background: #ededed;
+    box-shadow:  13px 13px 31px #dcdcdc, 
+                -13px -13px 31px #fefefe;
+    flex-grow: 1;
+    margin: 0 0.2rem;
+}
+/* .inputs{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+} */
+/* .inputAndLabel{
+    border: red 1px solid;
+} */
+form .inputAndLabel{
+    flex-grow: 1;
+}
+.inputAndLabel label{
+    width: 250px;
+}
+.inputAndLabel input{
+    border-radius: 0.5em;
+    border: 1px solid grey;
+}
+.calculateButtons{
+    display: block;
+}
+.calculateButtons button{
+    border: none;
+    margin-top: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5em;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid transparent;
+
+}
+.calculateButtons button:hover{
+    background-color: transparent;
+    color:#000;
+    border-color: #000;
+}
+.output{
+    flex-grow: 1;
+    /* min-width: 300px; */
+    margin: 2rem 0.2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    background: #ededed;
+    box-shadow:  13px 13px 31px #dcdcdc, 
+                -13px -13px 31px #fefefe;
+}
+.outputConsole{
+    color: #000;
+    font-family: monospace;
+    padding: 1rem;
+    border-radius: 1em;
+    font-size: 1.3rem;
+    background: #ededed;
+    box-shadow: inset 13px 13px 31px #dcdcdc, 
+            inset -13px -13px 31px #fefefe;
+}
+/* ---------------------------------------------- */
